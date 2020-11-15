@@ -23,6 +23,7 @@ transition:2s;
 	opacity: 1;
 	transition: 2s;
 	transform: scale(1.2) rotate(730deg);
+	z-index:1;
 }
 h1{
 	text-align: center;
