@@ -1,0 +1,67 @@
+.main{
+	border:1px double black;
+	width: 80%;
+	margin:auto;
+
+	display: flex;
+    flex-wrap: wrap;
+	justify-content: center;
+	align-content: space-around;
+ }
+.item{
+	width: 45%;
+	height: 400px;
+	margin:15px;
+	background-size: cover;
+	background-position: center;
+
+opacity: 0.4;
+transition:2s;
+}
+.item:hover{
+	box-shadow: 3px 3px 10px;
+	opacity: 1;
+	transition: 2s;
+	transform: scale(1.2) rotate(730deg);
+}
+h1{
+	text-align: center;
+}
+.img1{
+	background-image: url(img/Barbara.jpg);
+}
+.img2{
+	background-image: url(img/Diluc.jpg);
+	background-size: cover;
+	background-position: right;
+}
+.img3{
+	background-image: url(img/Ember.jpg);
+}
+.img4{
+	background-image: url(img/Ke_Cin.jpg);
+}
+.img5{
+	background-image: url(img/Klee.jpg);
+	background-size: cover;
+	background-position: right;
+}
+.img6{
+	background-image: url(img/Noell.jpg);
+	background-size: cover;
+	background-position: right;
+}
+.img7{
+	background-image: url(img/Saharose.jpg);
+}
+.img8{
+	background-image: url(img/San_Lin.jpg);
+	background-size: cover;
+	background-position: right;
+}
+body{
+	background-image: url(img/Genshin_Imapct.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+}
