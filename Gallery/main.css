@@ -22,7 +22,7 @@ transition:2s;
 	box-shadow: 3px 3px 10px;
 	opacity: 1;
 	transition: 2s;
-	transform: scale(1.2) rotate(-20deg);
+	transform: scale(1.2) rotate(730deg);
 }
 h1{
 	text-align: center;
