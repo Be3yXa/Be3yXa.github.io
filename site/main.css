@@ -1,0 +1,15 @@
+.navigation{
+	border: 3px solid black;
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	height: 120px;
+}
+.logo{
+	border: 3px solid black;
+		margin-left: 100px;
+}
+.nav-links{
+	border: 3px solid black;
+		margin-right: 100px;
+}
