@@ -1,15 +1,48 @@
+*{
+	font-family: cursive;
+}
 .navigation{
-	border: 3px solid black;
 	display:flex;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	justify-content: space-between;
 	height: 120px;
+	align-items: center;
 }
 .logo{
-	border: 3px solid black;
 		margin-left: 100px;
+		font-size: 30px;
 }
-.nav-links{
-	border: 3px solid black;
-		margin-right: 100px;
+.nav-links > a{
+	text-decoration: none;
+	color: black;
+	margin: 10px;
+	font-size: 22px;
+	padding: 5px;
+	transition: 0.5s;
 }
+.nav-links > a:hover{
+	background-color: black;
+	color:white;
+}
+.header{
+	height: 650px;
+	background-image:url("img/bright.jpg")
+}
+.blackout{
+	background-color: rgba(0,0,0,0.5);
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.header-content{
+	color:white;
+	text-align: center;
+}
+.header-content > a{
+	text-decoration: none;
+	color: white;
+	margin: 150px;
+	font-size: 22px;
+	padding: 5px;
+	background-color:red;
