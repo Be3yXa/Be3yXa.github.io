@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 *{
-	font-family: cursive;
+	font-family: 'Lobster', cursive;
 }
 .navigation{
 	display:flex;
@@ -10,13 +11,13 @@
 }
 .logo{
 		margin-left: 100px;
-		font-size: 30px;
+		font-size: 40px;
 }
 .nav-links > a{
 	text-decoration: none;
 	color: black;
 	margin: 10px;
-	font-size: 22px;
+	font-size: 30px;
 	padding: 5px;
 	transition: 0.5s;
 }
@@ -26,7 +27,15 @@
 }
 .header{
 	height: 650px;
-	background-image:url("img/bright.jpg")
+	background-image:url("img/bright.jpg");
+	transition: 1s;
+	background-size: 100% 100%;
+	background-position: center;
+	transition: 1s;
+}
+.header:hover{
+transition: 1s;
+background-size: 130% 130%;
 }
 .blackout{
 	background-color: rgba(0,0,0,0.5);
@@ -34,6 +43,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
 }
 .header-content{
 	color:white;
@@ -42,7 +52,91 @@
 .header-content > a{
 	text-decoration: none;
 	color: white;
-	margin: 150px;
-	font-size: 22px;
-	padding: 5px;
-	background-color:red;
+	margin: 30px;
+	display: inline-block;
+	font-size: 30px;
+	padding: 20px;
+	background-color: rgb(0,137,123);
+	width: 140px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.header-content > h1{
+	font-size: 40px;
+}
+.header-content > h2{
+ font-size: 40px;
+}
+.header-content > a:hover{
+	border: 3px solid white;
+	transition: 0.5s;
+	background-color: rgba(0,0,0,0);
+}
+.right{
+	transition: 1s
+}
+.left{
+	transition: 1s
+}
+.about{
+	text-align: center;
+}
+.about-top{
+	margin-bottom: 40px
+}
+.about-bot{
+	display: flex;
+	justify-content: space-around;
+}
+.about-item{
+	width: 30%;
+}
+.services{
+	margin-top: 150px;
+	background-size: 100% 100%;
+	background-color: #e4fdf9;
+}
+.servic-top{
+	padding-top: 30px;
+	text-align: center;
+}
+.servic-bot{
+display: flex;
+justify-content:space-around; 
+flex-wrap: wrap;
+text-align: center;
+}
+.servic-item{
+	width: 30%;
+	background-color: white;
+	margin-top: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 40px;
+	transition: 1s;
+}
+.servic-item > a{
+	text-decoration: none;
+	color: black;
+	margin: 30px;
+	display: inline-block;
+	font-size: 20px;
+	padding: 20px;
+	width: 140px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border: 2px solid black;
+	transition: 1s;
+}
+.servic-item:hover{
+	transition: 1s;
+	background-color:#2E8D72;
+	transform: scale(1.1);
+	color:white;
+	box-shadow: 8px 4px 3px black;
+}
+.servic-item > a:hover{
+	color:white;
+	transition: 1s;
+	border: 2px solid white;
+}
