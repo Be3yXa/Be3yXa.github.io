@@ -8,6 +8,12 @@
 	justify-content: space-between;
 	height: 120px;
 	align-items: center;
+	position: fixed;
+	background-color: white;
+	width: 100%;
+	top: 0px;
+	z-index: 1;
+	box-shadow: 0px 1px 5px grey;
 }
 .logo{
 		margin-left: 100px;
@@ -139,4 +145,22 @@ text-align: center;
 	color:white;
 	transition: 1s;
 	border: 2px solid white;
+}
+.Blog{
+	border: 2px solid black;
+}
+.bl-top{
+	border: 2px solid black;
+}
+.bl-bot{
+	border: 2px solid black;
+	display: flex;
+	justify-content: space-around;
+	align-content: space-around;
+	flex-wrap: wrap;
+}
+.bl-item{
+border: 2px solid black;
+width:49.7%;
+height: 400px;
 }
