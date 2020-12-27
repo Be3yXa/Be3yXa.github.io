@@ -5,16 +5,26 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+  AOS.init();
+	</script>
 	<div class="navigation">
-		<div class="logo">My PRoJeCT</div>
-		<div class="nav-links"> 
-			<a href="#">Home</a>
-			<a href="#">About</a>
-			<a href="#">Servicing</a>
-			<a href="#">Portfolio</a>
-			<a href="#">Blog</a>
-			<a href="#">Contact</a>
+		<div class="logo">
+			<div class="light l1"></div>
+			<div class="light l2"></div>
+			<div class="light l3"></div>
+			<div class="light l4"></div>
 		</div>
+			<div class="nav-links"> 
+				<a href="#">Home</a>
+				<a href="#">About</a>
+				<a href="#">Servicing</a>
+				<a href="#">Portfolio</a>
+				<a href="#">Blog</a>
+				<a href="#">Contact</a>
+			</div>
 	</div>
 		<div class="header">
 			<div class="blackout">
@@ -27,7 +37,9 @@
 			</div>
 		</div>
 	<div class="about">
-			<div class="about-top">
+			<div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" class="about-top">
 			<h1>About US</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			</p>
@@ -54,7 +66,9 @@
 		</div>
 	</div>
 <div class="services">
-	<div class="servic-top">
+	<div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000" class="servic-top">
 		<h1>Our services</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		</p>
