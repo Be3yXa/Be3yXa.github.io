@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CalcAverage</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+<body>
+	<form>
+		<label>Имя: </label>
+		<input id="name" type="text">
+		<br>
+		<label>Мат: </label>
+		<input id="math" type="text">
+		<br>
+		<label>Рус: </label>
+		<input id="rus" type="text">
+		<br>
+		<label>Инф: </label>
+		<input id="cs" type="text">
+		<br>
+		<input id="addStudent" type="button" value="Добавить ученика">
+		<br>
+		<input id="sortStudent" type="button" value="Сортировать">
+	</form>
+	<div id="info">
+		
+
+	</div>
+	<script type="text/javascript">
+		class Student 
+		{
+			Name;
+			Math;
+			Rus;
+			Cs;
+			Average;
+
+
+			constructor(name, math, rus, cs)
+			{
+				this.Name = name;
+				this.Math = math;
+				this.Rus = rus;
+				this.Cs = cs;
+				this.Average = this.CalcAverage();
+
+			}
+			CalcAverage()
+			{
+				var sum = this.Math + this.Rus + this.Cs;
+				var count = 3;
+				var result = sum/count;
+
+				return result;
+			}
+		}
+		
+	</script>
+	<script type="text/javascript">
+		var StudentArray = [];
+
+		function BubbleSort()
+		{
+			var n = StudentArray.length;
+			for (var i = 0; i < n; i++) {
+				for(var j = 0; j < n - 1; j++)
+				{
+					if(StudentArray[j].Average > StudentArray[j+1].Average)
+					{
+						var tmp = StudentArray[j];
+						StudentArray[j] = StudentArray[j+1];
+						StudentArray[j+1] = tmp;
+					}
+				}
+			}
+			showStudent()
+		}
+
+		function addStudent()
+		{
+			var studentName = $("#name").val();
+			var math = +$("#math").val();
+			var rus = +$("#rus").val();
+			var cs = +$("#cs").val();
+
+			var stud = new Student(studentName, math, rus, cs);
+			StudentArray.push(stud);
+
+			showStudent();
+		}
+
+		function showStudent()
+		{
+			$("#info > p").remove()
+			var text;
+			var n = StudentArray.length;
+			for(i = 0; i < n; i++)
+			{
+			text = "имя: " + StudentArray[i].Name + " | средняя оценка: " + StudentArray[i].Average;
+			$("#info").append("<p>" + text + "</p>");
+			}
+		}
+
+		$("#addStudent").click(addStudent);
+		$("#sortStudent").click(BubbleSort);
+	</script>
+</body>
+</html>
