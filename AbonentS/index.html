@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas</title>
+	<meta charset="utf-8">
+			
+</head>
+<body>
+	<canvas id="canvas" width="800" height="800">
+		<p>Ваш браузер не поддерживает Canvas.</p>
+	</canvas>
+
+	<script type="text/javascript">
+		var canvas = document.getElementById('canvas')
+		var gc = canvas.getContext("2d");
+
+		gc.strokeStyle = "Blue";
+		gc.beginPath();
+		gc.arc(100,100,50,Math.PI,3*Math.PI/2);
+		gc.stroke()
+
+		gc.strokeStyle = "Red"
+		gc.beginPath()
+		gc.arc(100,100,50,0,Math.PI/2);
+		gc.stroke();
+
+		function circle(x,y,radius,fill)
+		{
+			gc.beginPath();
+			gc.arc(x,y,radius,0,2*Math.PI);
+			if(fill == true)
+			{
+				gc.fill();
+			}
+			else
+			{
+				gc.stroke();
+			}
+		}
+		
+		
+
+	</script>
+
+</body>
+</html>
