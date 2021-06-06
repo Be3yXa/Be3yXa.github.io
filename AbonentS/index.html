@@ -1,34 +1,124 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>canvas</title>
-	<meta charset="utf-8">
-			
+	<title>JS</title>
+	<style type="text/css">
+		canvas{
+			border: 1px solid black;
+		}
+	</style>
 </head>
 <body>
-	<canvas id="canvas" width="800" height="800">
-		<p>Ваш браузер не поддерживает Canvas.</p>
-	</canvas>
+	<canvas id="canvas" width="600" height="600"></canvas>
 
 	<script type="text/javascript">
-		var canvas = document.getElementById('canvas')
+		var canvas = document.getElementById("canvas");
 		var gc = canvas.getContext("2d");
 
-		gc.strokeStyle = "Blue";
-		gc.beginPath();
-		gc.arc(100,100,50,Math.PI,3*Math.PI/2);
-		gc.stroke()
+		class Platform
+		{
+			centerX;
+			centerY;
+			width;
+			height;
+			speedX;
+			constructor(x,y,w,h,speed)
+			{
+				this.centerX = x;
+				this.centerY = y;
+				this.width = w;
+				this.height = h;
+				this.speedX = speed;
+			}
+			moveLeft()
+			{
+				if (this.centerX >-10)
+				{
+				this.centerX = this.centerX - this.speedX;
+				this.draw();
+				}
+			}
+			moveRight()
+			{
+				if (this.centerX < 530)
+				{
+				this.centerX = this.centerX + this.speedX;
+				this.draw();
+				}
+			}
+			draw()
+			{
+				gc.strokeRect(this.centerX,this.centerY,this.width,this.height);
+			}
 
-		gc.strokeStyle = "Red"
-		gc.beginPath()
-		gc.arc(100,100,50,0,Math.PI/2);
-		gc.stroke();
-
-		function circle(x,y,radius,fill)
+		}
+		class Ball
+		{
+			score = 0;
+			centerX;
+			centerY;
+			size;
+			speedX = 0;
+			speedY = 0;
+			constructor(x,y,size)
+			{
+				this.centerX = x;
+				this.centerY = y;
+				this.size = size;
+			}
+			setSpeed(vec_x, vec_y)
+			{
+				this.speedX = vec_x;
+				this.speedY = vec_y;
+			}
+			move()
+			{
+				this.centerX = this.centerX + this.speedX;
+				this.centerY = this.centerY + this.speedY;
+				this.checkBorder();
+				this.draw();
+			}
+			draw()
+			{
+				circle(this.centerX,this.centerY,this.size,false);
+			}
+			checkBorder()
+			{
+				if(this.centerX >= 600 || this.centerX <= 0)
+				{
+					this.reflectX();
+				}
+				if(this.centerY <= 0)
+				{
+					this.reflectY();
+				}
+			}
+			checkCollision(platform)
+			{
+				if(platform.centerX <= this.centerX && this.centerX <= platform.centerX + platform.width)
+				{
+					if(platform.centerY <= this.centerY && this.centerY <= platform.centerY + platform.height)
+					{
+						this.score++;
+						console.log(this.score);
+						this.reflectY();
+					}
+				}
+			}
+			reflectX()
+			{
+				this.speedX = -this.speedX;
+			}
+			reflectY()
+			{
+				this.speedY = -this.speedY;
+			}
+		}
+		function circle(x,y,radius,flag)
 		{
 			gc.beginPath();
-			gc.arc(x,y,radius,0,2*Math.PI);
-			if(fill == true)
+			gc.arc(x,y,radius,0,Math.PI*2);
+			if(flag == true)
 			{
 				gc.fill();
 			}
@@ -37,10 +127,36 @@
 				gc.stroke();
 			}
 		}
-		
-		
 
+		var ball_obj = new Ball(100, 100, 10);
+		ball_obj.setSpeed(2,1);
+		var platform = new Platform(5,400,80,20,10);
+
+		function update()
+		{
+			gc.clearRect(0,0,600,600);
+			ball_obj.checkCollision(platform);
+			ball_obj.move();
+			platform.draw();
+		}
+		setInterval(update,16);// 60 fps
+
+		//keyup
+		//keydown
+		//keypress
+		document.addEventListener('keydown', function(event){
+    		console.log('keyCode: ', event.keyCode);
+    		if(event.keyCode == 65)// A
+    		{
+    			//движение влево
+    			platform.moveLeft();
+    		}
+    		if(event.keyCode == 68)// D
+    		{
+    			//движение вправо
+    			platform.moveRight();
+    		}
+		});
 	</script>
-
 </body>
 </html>
